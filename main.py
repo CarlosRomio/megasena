@@ -29,4 +29,3 @@ sorteio = random.randrange(1,60)
 
 print(sorteio)
 
-#pipipi popopo
