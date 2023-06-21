@@ -1,8 +1,9 @@
 import random
+tentativas = 0
 numeros = []
 while True:
     aposta = input("informe um número da sua aposta: ")
-    if aposta in numeros:
+    if [int(aposta)] in numeros:
         aposta = ''
         print("Número já inserido")
     elif int(aposta) >= 61:
@@ -23,6 +24,8 @@ ordenar(numeros)
 while True:
     numeros_sorteados = random.sample(range(1, 61), 6)
     ordenar(numeros_sorteados)
+    tentativas = tentativas + 1
     if numeros == numeros_sorteados:
          print("Parabéns você acertou")
+         print('O número de tentativas necessárias foi: ', tentativas)
          break
