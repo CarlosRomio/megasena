@@ -1,16 +1,21 @@
 import random
 tentativas = 0
 numeros = []
+indice = None
 while True:
     aposta = input("informe um número da sua aposta: ")
-    if [int(aposta)] in numeros:
-        aposta = ''
-        print("Número já inserido")
-    elif int(aposta) >= 61:
+    aposta = [int(aposta)]
+    if len(numeros) > 0:
+        indice = int(len(numeros)) -1
+        print(numeros)
+        print(aposta)
+        if aposta == numeros[indice]:
+            aposta = ''
+            print("Número já inserido")
+    elif aposta >= [61]:
         aposta = ""
         print("Insira números menores que 60")
     if aposta != "":
-        aposta = [int(aposta)]
         numeros += aposta
     if len(numeros) ==  6:
         break
